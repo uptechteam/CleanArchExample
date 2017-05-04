@@ -14,17 +14,19 @@ class ChangeEmailPresenter @Inject constructor(private val changeEmailUseCase: C
   fun onConfirmButtonPressed() {
     view?.let { view ->
       val emailInput = view.getEmailInput()
-      if (EmailValidationUtils.isValidEmail(emailInput)) {
-        view.hideKeyboard()
-        changeEmailUseCase.changeUserEmail(emailInput!!)
-          .subscribe({ user ->
-            view.showChangedEmail(user.email)
-          }, {
-            //Error while changing email
-          })
-      } else {
-        view.showEmailValidationError()
-      }
+      emailInput?.let {
+        if (EmailValidationUtils.isValidEmail(emailInput)) {
+          view.hideKeyboard()
+          changeEmailUseCase.changeUserEmail(emailInput)
+            .subscribe({ user ->
+              view.showChangedEmail(user.email)
+            }, {
+              //Error while changing email
+            })
+        } else {
+          view.showEmailValidationError()
+        }
+      } ?: view.showEmailValidationError()
     }
   }
 
