@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+
+    <TextView
+        android:id="@+id/emailInputLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email_input_label"
+        android:textAlignment="center"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center_vertical"
+        android:hint="@string/email_input_hint"
+        android:inputType="textEmailAddress|textWebEmailAddress"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/confirmButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailEditText"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/confirm_button_background"
+        android:text="@string/confirm_button_label"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:layout_below="@id/confirmButton"
+        android:layout_marginTop="24dp"
+        android:textColor="@android:color/holo_blue_bright"
+        android:id="@+id/changedEmailTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
