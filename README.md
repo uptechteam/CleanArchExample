@@ -1,4 +1,4 @@
-# H1 Clean architecture in Android with Kotlin + RxJava + Dagger 2
+# Clean architecture in Android with Kotlin + RxJava + Dagger 2
 
   Here, in UPTech we spend a lot of time developing successful architecture patterns for an android application, we’ve decided to share our experience with the community.
 
